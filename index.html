@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ダイスとの戦い</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- タイトル画面 -->
+  <div id="titleScreen">
+    <h1>ダイスとの戦い</h1>
+    <button id="startBtn">戦いを始める</button>
+  </div>
+
+  <!-- ゲーム画面 -->
+  <div id="gameContainer" style="display: none;">
+    <div class="status">
+      <div class="hp-container">
+        <span>プレイヤーHP💜</span>
+        <div class="hp-bar"><div id="playerHpBar" class="hp-fill green"></div></div>
+      </div>
+      <div class="hp-container">
+        <span>敵HP👾</span>
+        <div class="hp-bar"><div id="enemyHpBar" class="hp-fill red"></div></div>
+      </div>
+      <p>敵 <span id="enemyLevel">1</span> / 5</p>
+    </div>
+
+    <div id="enemyContainer">
+      <img id="enemyImage" src="images/karma.png" alt="敵" />
+    </div>
+
+    <div id="barArea">
+      <div id="targetNormal"></div>
+      <div id="targetCritical"></div>
+      <div id="bar"></div>
+    </div>
+
+    <button id="stopBtn">タイミングを止める！</button>
+    <button id="retryBtn" style="display:none;">再戦する</button>
+
+    <div id="log"></div>
+  </div>
+
+  <!-- エンディング画面 -->
+  <div id="endingScreen" style="display: none;">
+    <h2>勝利…</h2>
+    <p>ダイス様との戦いを終え、あなたはこの世界を救った。</p>
+    <button onclick="location.reload()">もう一度プレイする</button>
+  </div>
+
+  <!-- 演出エフェクト -->
+  <div id="damageText" class="floating-text"></div>
+  <div id="hitEffect" class="hit-effect"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
